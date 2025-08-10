@@ -1,0 +1,93 @@
+name: "Product Support Request"
+description: "Use this form to report an issue or request help with the product."
+title: "[Support] <Short description of the issue>"
+labels:
+  - support
+  - triage
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for contacting support!
+        Please fill out all sections so we can resolve your issue faster.
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Information (optional)
+      description: How can we reach you if we need more details? (Email, GitHub username, etc.)
+      placeholder: e.g., name@example.com
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity Level
+      description: How urgent is this issue?
+      options:
+        - Critical (blocks business operations)
+        - High (major impact, no workaround)
+        - Medium (impact with workaround)
+        - Low (minor issue, cosmetic)
+    validations:
+      required: true
+
+  - type: input
+    id: product_version
+    attributes:
+      label: Product Version
+      description: Which version/build are you using?
+      placeholder: e.g., v2.3.1
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: Provide a clear and concise description of the problem.
+      placeholder: Describe what’s wrong...
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: List the exact steps so we can reproduce the issue.
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. See error...
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: I expected...
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Instead, I saw...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or Logs
+      description: Add screenshots or paste logs if possible.
+      placeholder: Drag and drop images or paste logs here.
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: If you’ve found a temporary workaround, please describe it.
+      placeholder: e.g., Restarting the service works temporarily.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Any other details that might help us.
